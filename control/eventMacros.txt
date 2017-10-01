@@ -1,0 +1,517 @@
+########################
+#####Money Transfer#####
+########################
+
+automacro Buy{
+exclusive 1
+Zeny > 60000
+run-once 1
+call {
+	do move geffen 129 58
+	$id = &vender(Official Vendor)
+	do vender $id
+	do vender $id 0 1 
+	release Buy
+	}
+}
+
+automacro OW2{
+InMap new_1-4
+CharCurrentWeight > 50%
+run-once 1
+call {
+	$num = &rand(1, 30)
+	drop $num 100
+	release OW2
+	}
+}
+
+
+
+########################
+#####Training Stuck#####
+########################
+
+automacro Tstuck{
+exclusive 1
+InMap new_1-4
+JobLevel < 9
+run-once 1
+call {
+	do move new_1-3
+	do conf lockMap none
+	release Tstuck
+	}
+}
+
+
+#########################
+#####Training Part 1#####
+#########################
+
+automacro Part1{
+exclusive 1
+JobLevel == 1
+InMap new_1-1, new_2-1, new_3-1, new_4-1, new_5-1
+run-once 1
+call {
+	do conf route_randomWalk 0
+	do conf attackAuto 0
+	do conf itemsGatherAuto 0
+	do conf itemsTakeAuto 0
+	do conf autoTalkCont 1
+	do conf statsAddAuto 1
+	do conf statsAddAuto_list 20 str, 20 dex, 20 agi
+	do conf skillsAddAuto 1
+	do conf skillsAddAuto_list NV_BASIC 9
+	pause 0.8
+	do talknpc 53 114
+	pause 20
+	do move new_1-1 140 113
+	pause 3
+	do move new_2-1 140 113
+	pause 3
+	do move new_3-1 140 113
+	pause 3
+	do move new_4-1 140 113
+	pause 3
+	do move new_5-1 140 113
+	pause 3
+	do talknpc 148 112
+	pause 20
+	do talk resp 1
+	pause 10
+	do talk resp 1
+	pause 10
+	do talk resp 0	
+	pause 10
+	do talk resp 0	
+	pause 10
+	do talk resp 1
+	pause 10
+	do talk resp 1
+	pause 5
+	do talknpc 148 112
+	pause 10
+	release Part1
+	}
+}
+
+#########################
+#####Training Part 2#####
+#########################
+
+automacro Part2{
+exclusive 1
+InMap new_1-2, new_2-2, new_3-2, new_4-2, new_5-2
+IsInMapAndCoordinate 100 9
+run-once 1
+call {
+	do move new_1-2 101 23
+	pause 2
+	do move new_2-2 101 23
+	pause 2
+	do move new_3-2 101 23
+	pause 2
+	do move new_4-2 101 23
+	pause 2
+	do move new_5-2 101 23
+	pause 2
+	do talknpc 100 29
+	pause 5
+	do talk resp 0
+	pause 2
+	do talknpc 100 29
+	pause 5
+	do talk resp 0
+	release Part2
+	}
+}
+
+#########################
+#####Training Part 3#####
+#########################
+
+automacro Part3{
+exclusive 1
+QuestActive 7118
+run-once 1
+call {
+	do talknpc 100 105
+	pause 30
+	release Part3
+	}
+}
+
+#########################
+#####Training Part 4#####
+#########################
+
+automacro Part4{
+exclusive 1
+QuestActive 7119
+run-once 1
+call {
+	pause 2
+	do eq Tattered Novice Ninja Suit 
+	pause 0.8 
+	do eq Somber Novice Hood
+	pause 0.8
+	do eq Novice Slippers
+	pause 0.8
+	do eq Novice False Eggshell
+	pause 0.8
+	do eq Novice Main-Gauche
+	pause 0.8
+	do eq Novice Guard
+	pause 0.8
+	do talknpc 100 105
+	pause 30
+	release Part4
+	}
+}
+
+
+automacro Part4.1{
+exclusive 1
+QuestActive 7120
+run-once 1
+call {
+	do move new_1-2 107 107
+	pause 0.8
+	do talknpc 115 120
+	pause 10
+	do talk resp 0
+	pause 10
+	do talknpc 100 105
+	pause 10
+	do talknpc 100 105
+	pause 3
+	do talk resp 1
+	release Part4.1
+	}
+}
+
+#########################
+#####Training Part 5#####
+#########################
+
+automacro Part5{
+exclusive 1
+InMap new_1-2, new_2-2, new_3-2, new_4-2, new 5-2
+IsInMapAndCoordinate 41 172
+run-once 1
+call {
+	do talknpc 33 172
+	pause 10
+	}
+}
+
+automacro Part5.1{
+exclusive 1
+QuestActive 7121
+run-once 1
+call {
+	do talknpc 30 176
+	pause 30
+	do talk resp 5
+	pause 2
+	do talknpc 33 176
+	pause 15
+	do talknpc 36 176
+	pause 15
+	do talknpc 33 172
+	pause 30
+	release Part5.1
+	}
+}
+
+#########################
+#####Training Part 6#####
+#########################
+
+automacro Part6{
+exclusive 1
+InMap new_1-3, new_2-3, new_3-3, new_4-3, new_5-3
+run-once 1
+call {
+	do conf route_randomWalk 1
+	do conf attackAuto 2
+	do conf itemsTakeAuto 0
+	}
+}
+
+
+#########################
+#####Training Part 7#####
+#########################
+
+automacro Part7{
+exclusive 1
+InMap new_1-3, new_2-3, new_3-3, new_4-3, new_5-3
+JobLevel == 10
+run-once 1
+call {
+	do move new_1-4
+	release Part7
+	}
+}
+
+#########################
+#####Training Part 8#####
+#########################
+
+automacro Part8{
+exclusive 1
+InMap new_1-4, new_2-4, new_3-4, new_4-4, new_5-4
+JobLevel == 10
+run-once 1
+call {
+	do move new_1-4 106 26
+	do talknpc 100 29
+	pause 10
+	do talk resp 0
+	pause 10
+	do talk resp 1
+	pause 30
+	release Part8
+	}
+}
+
+#########################
+#####ChangeJob Part1#####
+#########################
+
+automacro JobPart1{
+exclusive 1
+InMap prt_church, prontera
+JobID 0
+JobLevel == 10
+run-once 1
+call {
+	do move prt_church 184 37
+	pause 1
+	do talknpc 184 41
+	pause 5
+	do talk resp 0
+	}
+}
+
+
+#########################
+#####ChangeJob Part2#####
+#########################
+
+automacro JobPart2{
+QuestActive 1001
+run-once 1
+call {
+	do ai manual
+	do move prt_fild03 365 263
+	pause 1
+	do talknpc 365 255
+	pause 10
+	do move prt_church 184 37
+	pause 1
+	do talknpc 184 41
+	pause 5
+	do talk resp 0
+	pause 15
+	do move prontera
+	do ai on
+	release JobPart2
+	}
+}
+
+#########################
+#####ChangeJob Part3#####
+#########################
+
+automacro JobPart3{
+QuestActive 1002
+run-once 1
+call {
+	do ai manual
+	do move moc_fild07 37 354
+	pause 1
+	do talknpc 41 355
+	pause 10
+	do move prt_church 184 37
+	pause 1
+	do talknpc 184 41
+	pause 5
+	do talk resp 0
+	pause 15
+	do move prontera
+	do ai on
+	release JobPart3
+	}
+}
+
+#########################
+#####ChangeJob Part4#####
+#########################
+
+automacro JobPart4{
+QuestActive 1003
+run-once 1
+call {
+	do ai manual
+	do move prt_fild00 210 218
+	pause 1
+	do talknpc 208 218
+	pause 10
+	do move prt_church 184 37
+	pause 1
+	do talknpc 184 41
+	pause 5
+	do talk resp 0
+	pause 15
+	do move prontera
+	do ai on
+	release JobPart4
+	}
+}
+
+
+#########################
+#####Road to Level01#####
+#########################
+
+automacro Level01{
+JobID 4
+BaseLevel < 40
+run-once 1
+call {
+	do move prontera 281 206
+	pause 1
+	do talknpc 282 200
+	pause 3
+	do talk resp 0
+	pause 1
+	do move prt_fild06
+	do conf storageAuto 1
+	do conf storageAuto_npc prontera 282 200
+	do conf itemsGatherAuto 1
+	do conf itemsTakeAuto 1
+	do conf lockMap prt_fild06
+	do conf itemsMaxWeight_sellOrStore 49
+	do conf sellAuto 1
+	do conf sellAuto_npc prontera 218 211
+	do conf statsAddAuto 1
+	do conf statsAddAuto_list 20 str, 30 dex, 40 agi
+	do conf sitAuto_hp_upper 50
+	do conf skillsAddAuto 1
+	do conf skillsAddAuto_list NV_BASIC 9, AL_RUWACH 1, AL_TELEPORT 2, AL_HEAL 3, AL_INCAGI 10, AL_DP 5, AL_BLESSING 10
+	do conf saveMap prontera
+	do conf saveMap_warpToBuyOrSell 1
+	}
+}
+
+##########################
+#####Overweight LIMIT#####
+##########################
+
+automacro OW{
+exclusive 1
+InMap new_1-3, new_2-3, new_3-3, new_4-3, new_5-3
+run-once 1
+call {
+	do conf itemsTakeAuto 0
+	}
+}
+################
+#####Weapon#####
+################
+
+automacro Weapon{
+exclusive 1
+JobID 4
+IsNotEquippedID rightHand 1519
+Zeny > 30000
+timeout 1
+run-once 1
+call {
+	do move prt_church 105 121
+	pause 1
+	do talknpc 108 124
+	pause 2
+	do store
+	pause 2
+	do buy 10 1
+	pause 2
+	do eq Chain [2]
+   }
+}
+
+########################
+#####Skill Blessing#####
+########################
+
+automacro Blessing{
+exclusive 1
+SkillLevel AL_BLESSING > 1
+StatusInactiveHandle EFST_BLESSING
+CurrentSP > 20%
+run-once 1
+call {
+	do ss 34 10
+	pause 1
+	release Blessing
+   }
+}
+
+#######################
+#####Skill Agility#####
+#######################
+
+automacro Agility{
+exclusive 1
+SkillLevel AL_INCAGI > 1
+StatusInactiveHandle EFST_INC_AGI
+CurrentSP > 20%
+run-once 1
+call {
+	do ss 29 10
+	pause 1
+	release Agility
+   }
+}
+
+#########################
+#####Road to Level02#####
+#########################
+
+automacro Level02{
+exclusive 1
+JobID 4
+BaseLevel > 40
+run-once 1
+call {
+	do move geffen 203 121
+	pause 1
+	do talknpc 203 123
+	pause 3
+	do talk resp 0
+	pause 1
+	do move mjolnir_06
+	do conf storageAuto 1
+	do conf storageAuto_npc geffen 203 123
+	do conf itemsGatherAuto 1
+	do conf itemsTakeAuto 1
+	do conf lockMap mjolnir_06
+	do conf itemsMaxWeight_sellOrStore 49
+	do conf sellAuto 1
+	do conf sellAuto_npc geffen 196 111
+	do conf statsAddAuto 1
+	do conf statsAddAuto_list 50 str, 30 dex, 70 agi
+	do conf sitAuto_hp_upper 50
+	do conf skillsAddAuto 1
+	do conf skillsAddAuto_list NV_BASIC 9, AL_RUWACH 1, AL_TELEPORT 2, AL_HEAL 3, AL_INCAGI 10, AL_DP 10, AL_BLESSING 10, AL_DEMONBANE 10, AL_DECAGI 3
+	do conf saveMap geffen
+	do conf saveMap_warpToBuyOrSell 1
+	}
+}
+
+
+
