@@ -31,3 +31,16 @@ call {
 	}
 }
 
+########################
+#####Training Stuck#####
+########################
+
+automacro Stuck2{
+exclusive 1
+console /Stuck during route/
+run-once 1
+call {
+	do relog
+	release Stuck2
+   }
+}
