@@ -1,0 +1,33 @@
+########################
+########Healing#########
+########################
+
+automacro NovicePotion{
+hp < 70%
+exclusive 1
+inventory "Novice Potion" > 1
+call {
+	do is Novice Potion
+	}
+}
+
+automacro Apple{
+hp < 70%
+exclusive 1
+inventory "Apple" > 1
+call {
+	do is Apple
+	}
+}
+
+automacro Heal{
+class Acolyte
+job > 6
+hp < 50%
+sp > 20%
+exclusive 1
+call {
+	do ss 28 3
+	}
+}
+
