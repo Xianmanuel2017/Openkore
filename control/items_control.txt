@@ -1,3 +1,5 @@
 all 0 0 1
 Empty Bottle 0 1 0
 Rough Elunium 0 1 0
+Strawberry 0 1 0
+Grape 0 1 0
