@@ -34,6 +34,12 @@ XKore_listenPort 6901
 XKore_publicIp 127.0.0.1
 XKore_ID
 
+webBind localhost
+webPort 1025
+webMapURL /map/%s
+webDBLink_monster http://ratemyserver.net/index.php?page=mob_db&mob_id=%s
+webDBLink_item http://ratemyserver.net/index.php?page=item_db&item_id=%s
+
 # It is not advised to set secureAdminPassword if you're using Xkore 2
 secureAdminPassword 1
 adminPassword
